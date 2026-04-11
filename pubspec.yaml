@@ -41,6 +41,8 @@ dependencies:
   retrofit: ^4.9.2
   retrofit_generator: ^10.2.3
   get_it: ^9.2.1
+  firebase_core: ^4.6.0
+  firebase_auth: ^6.3.0
 
 
 

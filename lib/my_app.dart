@@ -1,18 +1,13 @@
 import 'package:cartella/core/routing/app_router.dart';
-import 'package:cartella/core/routing/routes.dart';
 import 'package:cartella/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   final AppRouter appRouter;
-  const MyApp({super.key, required this.appRouter});
+  final String initialRoute;
+  const MyApp({super.key, required this.appRouter, required this.initialRoute});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -29,8 +24,8 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingScreen,
-        onGenerateRoute: widget.appRouter.generateRoute,
+        initialRoute: initialRoute,
+        onGenerateRoute: appRouter.generateRoute,
       ),
     );
   }

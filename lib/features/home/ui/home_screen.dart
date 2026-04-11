@@ -15,6 +15,26 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          buildSliverAppBar(),
+          buildSliverText("New\n", "You’ve never seen it before!"),
+          buildHorizentalListView(),
+          buildSliverText("Sale\n", "Super summer sale"),
+          buildHorizentalListView(),
+          buildSmallBanner(),
+          buildSliverText("Catetegories", ""),
+          buildHorizentalListView(),
+        ],
+      ),
+    );
+  }
+}
+
 Widget buildHorizentalListView() {
   return SliverToBoxAdapter(
     child: SizedBox(
@@ -82,24 +102,4 @@ Widget buildSmallBanner() {
       ),
     ),
   );
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          buildSliverAppBar(),
-          buildSliverText("New\n", "You’ve never seen it before!"),
-          buildHorizentalListView(),
-          buildSliverText("Sale\n", "Super summer sale"),
-          buildHorizentalListView(),
-          buildSmallBanner(),
-          buildSliverText("Catetegories", ""),
-          buildHorizentalListView(),
-        ],
-      ),
-    );
-  }
 }

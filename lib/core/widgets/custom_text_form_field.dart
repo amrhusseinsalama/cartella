@@ -7,26 +7,38 @@ class CustomTextFormField extends StatelessWidget {
   final bool? isObscureText;
   final String labelText;
   final Widget? suffixIcon;
-  const CustomTextFormField({super.key, required this.labelText,this.isObscureText, this.suffixIcon});
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
+  const CustomTextFormField({
+    super.key,
+    required this.labelText,
+    this.isObscureText,
+    this.suffixIcon,
+    this.controller,
+    this.validator,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h),
       child: Container(
-        decoration: BoxDecoration(color: Colors.white,
-        borderRadius: BorderRadius.circular(6.r), 
-        boxShadow: [
-        BoxShadow(
-          color: Colors.black26,
-          blurRadius: 0.75.r,
-          offset: Offset(0, 0.75),
-        ),
-      ],
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(6.r),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              blurRadius: 0.75.r,
+              offset: Offset(0, 0.75),
+            ),
+          ],
         ),
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: TextFormField(
+            controller: controller,
+            validator: validator,
             obscureText: isObscureText ?? false,
             style: TextStyles.font14LightBlack500W,
             decoration: InputDecoration(

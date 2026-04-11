@@ -1,3 +1,5 @@
+import 'package:cartella/core/constants/auth_constants.dart';
+import 'package:cartella/features/auth/logic/cubit/auth_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cartella/app_bottom_nav_bar.dart';
 import 'package:cartella/core/di/injection.dart';
@@ -12,10 +14,17 @@ class AppRouter {
     switch (settings.name) {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => OnBoardingScreen());
-      case Routes.loginScreen:
-        return MaterialPageRoute(builder: (_) => AuthScreen(type: AuthType.login,));
-      case Routes.signUpScreen:
-        return MaterialPageRoute(builder: (_) => AuthScreen(type: AuthType.signup,));
+      case Routes.authScreen:
+        final type = settings.arguments is AuthType
+            ? settings.arguments as AuthType
+            : AuthType.signup;
+
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<AuthCubit>(),
+            child: AuthScreen(type: type),
+          ),
+        );
       case Routes.appBottomNavBar:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
