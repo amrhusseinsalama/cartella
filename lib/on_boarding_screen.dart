@@ -1,4 +1,3 @@
-import 'package:cartella/core/constants/auth_constants.dart';
 import 'package:cartella/core/helper/extensions.dart';
 import 'package:cartella/core/routing/routes.dart';
 import 'package:cartella/core/widgets/custom_text_button.dart';
@@ -44,7 +43,7 @@ class OnBoardingScreen extends StatelessWidget {
                   right: 0.w,
                   child: CustomTextButton(
                     buttonText: "Get Started",
-                    onPressed: () => context.pushNamed(
+                    onPressed: () => context.pushReplacementNamed(
                       Routes.authScreen,
                     ),
                   ),

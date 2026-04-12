@@ -27,6 +27,13 @@ class _AuthScreenState extends State<AuthScreen> {
   final nameController = TextEditingController();
   final formKey = GlobalKey<FormState>();
   bool isObsecure = true;
+  late bool isLogin;
+
+  @override
+  void initState() {
+    super.initState();
+    isLogin = widget.type == AuthType.login;
+  }
 
   @override
   void dispose() {
@@ -39,7 +46,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<AuthCubit>();
-    final isLogin = widget.type == AuthType.login;
+    
 
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
@@ -106,12 +113,9 @@ class _AuthScreenState extends State<AuthScreen> {
                         ),
                         InkWell(
                           onTap: () {
-                            if (!isLogin) {
-                              context.pushReplacementNamed(
-                                Routes.authScreen,
-                                arguments: isLogin ? AuthType.signup : AuthType.login,
-                              );
-                            }
+                            setState(() {
+                              isLogin = !isLogin;
+                            });
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -156,6 +160,7 @@ class _AuthScreenState extends State<AuthScreen> {
                                           cubit.signUp(
                                             emailController.text.trim(),
                                             passwordController.text.trim(),
+                                            nameController.text.trim(),
                                           );
                                         }
                                       }

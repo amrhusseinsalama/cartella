@@ -15,14 +15,10 @@ class AppRouter {
       case Routes.onBoardingScreen:
         return MaterialPageRoute(builder: (_) => OnBoardingScreen());
       case Routes.authScreen:
-        final type = settings.arguments is AuthType
-            ? settings.arguments as AuthType
-            : AuthType.signup;
-
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => getIt<AuthCubit>(),
-            child: AuthScreen(type: type),
+            child: AuthScreen(type: AuthType.signup),
           ),
         );
       case Routes.appBottomNavBar:

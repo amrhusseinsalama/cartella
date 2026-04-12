@@ -12,11 +12,13 @@ class AuthRepoImpl implements AuthRepo {
   }
 
   @override
-  Future<void> signUp(String email, String password) async {
-    await _auth.createUserWithEmailAndPassword(
+  Future<void> signUp(String name, String email, String password) async {
+    UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
       email: email,
       password: password,
     );
+    await userCredential.user?.updateDisplayName(name);
+    await userCredential.user?.reload();
   }
 
   @override

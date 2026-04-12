@@ -13,12 +13,12 @@ final getIt = GetIt.instance;
 
 void initGetIt() {
   //Home
-  getIt.registerLazySingleton<WebServices>(() => WebServices(Dio()));
-  getIt.registerLazySingleton<ProductRepo>(() => RepoImpl(getIt()));
+  getIt.registerFactory<WebServices>(() => WebServices(Dio()));
+  getIt.registerFactory<ProductRepo>(() => RepoImpl(getIt()));
   getIt.registerFactory<ProductCubit>(() => ProductCubit(getIt()));
 
   //Auth
-  getIt.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
-  getIt.registerLazySingleton<AuthRepo>(() => AuthRepoImpl(getIt()));
+  getIt.registerFactory<FirebaseAuth>(() => FirebaseAuth.instance);
+  getIt.registerFactory<AuthRepo>(() => AuthRepoImpl(getIt()));
   getIt.registerFactory<AuthCubit>(() => AuthCubit(getIt()));
 }

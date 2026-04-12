@@ -13,7 +13,7 @@ import 'package:cartella/my_app.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp(appRouter: AppRouter(), initialRoute: '',));
+    await tester.pumpWidget(MyApp(appRouter: AppRouter(), /* initialRoute: '', */));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

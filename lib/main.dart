@@ -12,6 +12,11 @@ Future<void> main() async {
   initGetIt();
   await Firebase.initializeApp();
   await ScreenUtil.ensureScreenSize();
-  bool isLoggedIn = FirebaseAuth.instance.currentUser != null;
-  runApp(MyApp(appRouter: AppRouter(), initialRoute: isLoggedIn ? Routes.appBottomNavBar : Routes.onBoardingScreen,));
+  //bool isLoggedIn = FirebaseAuth.instance.currentUser != null;
+  runApp(
+    MyApp(
+      appRouter:
+          AppRouter() /* initialRoute: isLoggedIn ? Routes.appBottomNavBar : Routes.onBoardingScreen, */,
+    ),
+  );
 }
