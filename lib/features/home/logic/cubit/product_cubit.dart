@@ -10,11 +10,8 @@ class ProductCubit extends Cubit<ProductState> {
   ProductCubit(this.productRepo) : super(ProductInitial());
 
   void emitGetProducts() async {
-    print("🔥 START FETCH");
-
     try {
       final products = await productRepo.getProducts();
-      print("🔥 DONE FETCH: ${products.length}");
       emit(GetProducts(products));
     } catch (e) {
       emit(ProductErorr(e.toString()));

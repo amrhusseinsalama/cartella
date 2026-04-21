@@ -1,6 +1,7 @@
 import 'package:cartella/features/auth/data/auth_repo.dart';
 import 'package:cartella/features/auth/data/auth_repo_impl.dart';
 import 'package:cartella/features/auth/logic/cubit/auth_cubit.dart';
+import 'package:cartella/features/favorites/logic/cubit/favorite_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
@@ -16,6 +17,9 @@ void initGetIt() {
   getIt.registerFactory<WebServices>(() => WebServices(Dio()));
   getIt.registerFactory<ProductRepo>(() => RepoImpl(getIt()));
   getIt.registerFactory<ProductCubit>(() => ProductCubit(getIt()));
+
+  //Fav
+  getIt.registerLazySingleton<FavoriteCubit>(() => FavoriteCubit(),);
 
   //Auth
   getIt.registerFactory<FirebaseAuth>(() => FirebaseAuth.instance);

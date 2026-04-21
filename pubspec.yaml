@@ -43,6 +43,8 @@ dependencies:
   get_it: ^9.2.1
   firebase_core: ^4.6.0
   firebase_auth: ^6.3.0
+  flutter_native_splash: ^2.4.7
+  equatable: ^2.0.8
 
 
 
@@ -58,6 +60,7 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   json_serializable: ^6.13.1
   build_runner: ^2.13.1
+  flutter_launcher_icons: ^0.14.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -100,3 +103,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon.png"
+
+flutter_native_splash:
+  color: "#DC3022"
+  image: "assets/images/splash.png"
+  android_12:
+    image: "assets/images/splash.png"
+    color: "#DC3022"
+  fullscreen: true  

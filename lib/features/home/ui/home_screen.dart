@@ -1,3 +1,4 @@
+import 'package:cartella/features/favorites/logic/cubit/favorite_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,14 +9,9 @@ import 'package:cartella/features/home/logic/cubit/product_cubit.dart';
 import 'package:cartella/features/home/ui/widgets/sliver_text_row.dart';
 import 'package:cartella/features/home/ui/widgets/sliver_app_bar.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,27 +36,38 @@ Widget buildHorizentalListView() {
     child: SizedBox(
       height: 440.h,
       child: BlocBuilder<ProductCubit, ProductState>(
-        builder: (context, state) {
-          if (state is GetProducts) {
+        builder: (context, homeState) {
+          if (homeState is GetProducts) {
             return ListView.builder(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
-              itemCount: state.getProducts.length,
+              itemCount: homeState.getProducts.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: EdgeInsets.symmetric(vertical: 30.h),
-                  child: Padding(
-                    padding: EdgeInsets.only(right: 20.w),
-                    child: ProductCard(
-                      title: state.getProducts[index].title,
-                      price: state.getProducts[index].price.toString(),
-                      imageUrl: state.getProducts[index].images[0],
-                      icon: Icons.favorite_outline,
-                      iconColor: ColorsManager.mygray,
-                      onPressed: () {},
-                      backgroundColor: ColorsManager.mywhite,
-                    ),
-                  ),
+                return BlocBuilder<FavoriteCubit, FavoriteState>(
+                  builder: (context, favoriteState) {
+                    final currentProduct = homeState.getProducts[index];
+                    final favoriteCubit = context.read<FavoriteCubit>();
+                    final isFav = favoriteCubit.isFavorite(currentProduct);
+                    return Padding(
+                      padding: EdgeInsets.symmetric(vertical: 30.h),
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 20.w),
+                        child: ProductCard(
+                          title: currentProduct.title,
+                          price: currentProduct.price.toString(),
+                          imageUrl: currentProduct.images[0],
+                          icon: isFav ? Icons.favorite : Icons.favorite_outline,
+                          iconColor: isFav
+                              ? ColorsManager.mainRed
+                              : ColorsManager.mygray,
+                          onPressed: () {
+                            favoriteCubit.toggleFavorite(currentProduct);
+                          },
+                          backgroundColor: ColorsManager.mywhite,
+                        ),
+                      ),
+                    );
+                  },
                 );
               },
             );

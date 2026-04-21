@@ -1,13 +1,12 @@
 import 'package:cartella/core/routing/app_router.dart';
-import 'package:cartella/core/routing/routes.dart';
 import 'package:cartella/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyApp extends StatelessWidget {
   final AppRouter appRouter;
-  //final String initialRoute;
-  const MyApp({super.key, required this.appRouter, /* required this.initialRoute */});
+  final String initialRoute;
+  const MyApp({super.key, required this.appRouter, required this.initialRoute});
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +21,11 @@ class MyApp extends StatelessWidget {
           appBarTheme: AppBarTheme(
             backgroundColor: ColorsManager.whiteBackground,
             surfaceTintColor: ColorsManager.whiteBackground,
+            elevation: 0,
           ),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.onBoardingScreen,
-       // initialRoute: initialRoute,
+        initialRoute: initialRoute,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );

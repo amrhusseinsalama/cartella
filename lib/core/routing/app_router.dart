@@ -1,5 +1,6 @@
 import 'package:cartella/core/constants/auth_constants.dart';
 import 'package:cartella/features/auth/logic/cubit/auth_cubit.dart';
+import 'package:cartella/features/favorites/logic/cubit/favorite_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cartella/app_bottom_nav_bar.dart';
 import 'package:cartella/core/di/injection.dart';
@@ -23,8 +24,13 @@ class AppRouter {
         );
       case Routes.appBottomNavBar:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (context) => getIt<ProductCubit>()..emitGetProducts(),
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => getIt<ProductCubit>()..emitGetProducts(),
+              ),
+              BlocProvider.value(value: getIt<FavoriteCubit>()),
+            ],
             child: AppBottomNavBar(),
           ),
         );

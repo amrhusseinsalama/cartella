@@ -99,12 +99,6 @@ class ProductCard extends StatelessWidget {
                       TextSpan(
                         children: [
                           TextSpan(
-                            text: "LIME\n",
-                            style: TextStyles.font11Graye600W.copyWith(
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          TextSpan(
                             text: "$title \n",
                             style: TextStyles.font11myBlack400W.copyWith(
                               fontSize: 16.sp,
@@ -125,7 +119,7 @@ class ProductCard extends StatelessWidget {
                             ),
                           ),
                           TextSpan(text: "L\n"),
-                          TextSpan(text: "$price \$"),
+                          TextSpan(text: "Price: $price \$"),
                         ],
                       ),
                     ),
