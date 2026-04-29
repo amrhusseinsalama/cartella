@@ -102,9 +102,9 @@ flutter pub get
 flutter run
 ```
 
-## 🧍🏻‍♂️ Author
+## 👤 Author
 
-Amr Hussein  
-GitHub: https://github.com/amrhusseinsalama
-LinkedIn: http://www.linkedin.com/in/amr-hussein-277bba389
-Email: amrhusseingohar@gmail.com
+- **Amr Hussein**
+- **GitHub:** [amrhusseinsalama](https://github.com/amrhusseinsalama)
+- **LinkedIn:** [Amr Hussein](http://www.linkedin.com/in/amr-hussein-277bba389)
+- **Email:** amrhusseingohar@gmail.com
