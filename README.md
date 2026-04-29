@@ -1,16 +1,105 @@
-# cartella
+# Cartella
 
-A new Flutter project.
+A Flutter e-commerce application with authentication, home, favorites, categories, profile, and cart system.
+(still under developement)
 
-## Getting Started
+## 🔥 Preview
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- User Authentication using Firebase
+- Product Categories
+- Add to Favorites
+- Cart System
+- Responsive UI
+- State Management using Bloc
+- API Integration using Dio & Retrofit
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## 🖥️ Tech Stack
+
+- Flutter
+- Dart
+- Bloc / Cubit
+- Dio
+- Retrofit
+- Firebase
+- GetIt (Dependency Injection)
+
+## 🛠️ Architecture
+
+- Feature-Based Structure
+- Repository Pattern
+- Dependency Injection
+- Bloc / Cubit State Management
+- API Integration using Dio + Retrofit
+- Clean UI Components Reusability
+
+## 📁 Folder Structure
+
+lib/
+├── main.dart
+├── my_app.dart
+├── app_bottom_nav_bar.dart
+├── on_boarding_screen.dart
+│
+├── core/
+│   ├── constants/
+│   ├── di/
+│   ├── helper/
+│   ├── networking/
+│   ├── routing/
+│   ├── theming/
+│   └── widgets/
+│
+└── features/
+    ├── auth/
+    │   ├── data/
+    │   ├── logic/
+    │   └── ui/
+    │
+    ├── home/
+    │   ├── data/
+    │   ├── logic/
+    │   └── ui/
+    │
+    ├── cart/
+    │   ├── logic/
+    │   └── ui/
+    │
+    ├── favorites/
+    │   ├── logic/
+    │   └── ui/
+    │
+    ├── categories/
+    │   ├── data/
+    │   ├── logic/
+    │   └── ui/
+    │
+    └── profile/
+
+## 🎯 Future Improvements
+
+- Payment Integration
+- Dark Mode
+- Search Feature
+- Admin Dashboard
+- Localization
+
+## ⚙️ Installation
+
+  ...bash
+  git clone https://github.com/username/cartella.git
+  cd cartella
+  flutter pub get
+  flutter run
+
+## 📱 Screenshots
+
+## 🧍🏻‍♂️ Author
+
+Amr Hussein  
+GitHub: https://github.com/amrhusseinsalama
+LinkedIn: http://www.linkedin.com/in/amr-hussein-277bba389
+Email: amrhusseingohar@gmail.com
