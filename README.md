@@ -76,11 +76,12 @@ lib/
 
 ## ⚙️ Installation
 
-  ...bash
-  git clone https://github.com/username/cartella.git
-  cd cartella
-  flutter pub get
-  flutter run
+```bash
+git clone https://github.com/username/cartella.git
+cd cartella
+flutter pub get
+flutter run
+```
 
 ## 📱 Screenshots
 
