@@ -1,3 +1,4 @@
+import 'package:cartella/core/routing/routes.dart';
 import 'package:cartella/features/favorites/logic/cubit/favorite_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -5,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cartella/core/theming/colors.dart';
 import 'package:cartella/core/theming/styles.dart';
 import 'package:cartella/core/widgets/product_card.dart';
-import 'package:cartella/features/home/logic/cubit/product_cubit.dart';
+import 'package:cartella/features/home/logic/cubit/home_cubit.dart';
 import 'package:cartella/features/home/ui/widgets/sliver_text_row.dart';
 import 'package:cartella/features/home/ui/widgets/sliver_app_bar.dart';
 
@@ -53,6 +54,13 @@ Widget buildHorizentalListView() {
                       child: Padding(
                         padding: EdgeInsets.only(right: 20.w),
                         child: ProductCard(
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              Routes.productDetailsScreen,
+                              arguments: currentProduct,
+                            );
+                          },
                           title: currentProduct.title,
                           price: currentProduct.price.toString(),
                           imageUrl: currentProduct.images[0],

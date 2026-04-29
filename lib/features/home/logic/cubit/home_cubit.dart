@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cartella/features/home/logic/entities/product.dart';
 import 'package:cartella/features/home/logic/repo/product_repo.dart';
 
-part 'product_state.dart';
+part 'home_state.dart';
 
 class ProductCubit extends Cubit<ProductState> {
   final ProductRepo productRepo;

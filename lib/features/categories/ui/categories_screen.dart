@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cartella/core/theming/colors.dart';
 import 'package:cartella/core/theming/styles.dart';
-import 'package:cartella/features/shop/ui/widgets/tab_view_screen.dart';
+import 'package:cartella/features/categories/ui/widgets/tab_view_screen.dart';
 
-class ShopScreen extends StatelessWidget {
-  const ShopScreen({super.key});
+class CategoriesScreen extends StatelessWidget {
+  const CategoriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

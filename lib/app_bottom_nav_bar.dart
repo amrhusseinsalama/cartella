@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cartella/core/theming/colors.dart';
 import 'package:cartella/core/theming/styles.dart';
-import 'package:cartella/features/bag/ui/bag_screen.dart';
+import 'package:cartella/features/cart/ui/cart_screen.dart';
 import 'package:cartella/features/favorites/ui/favorite_screen.dart';
 import 'package:cartella/features/home/ui/home_screen.dart';
 import 'package:cartella/features/profile/profile.dart';
-import 'package:cartella/features/shop/ui/shop_screen.dart';
+import 'package:cartella/features/categories/ui/categories_screen.dart';
 
 class AppBottomNavBar extends StatefulWidget {
   const AppBottomNavBar({super.key});
@@ -20,8 +20,8 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
 
   List<Widget> pages = [
     HomeScreen(),
-    ShopScreen(),
-    BagScreen(),
+    CategoriesScreen(),
+    CartScreen(),
     FavoriteScreen(),
     ProfileScreen(),
   ];
@@ -57,8 +57,8 @@ class _AppBottomNavBarState extends State<AppBottomNavBar> {
           unselectedItemColor: ColorsManager.mygray,
           items: [
             bottomNavItem(Icons.home, "Home"),
-            bottomNavItem(Icons.shopping_cart_outlined, "Shop"),
-            bottomNavItem(Icons.shopping_bag_outlined, "Bag"),
+            bottomNavItem(Icons.category_outlined, "Categories"),
+            bottomNavItem(Icons.shopping_cart_outlined, "Cart"),
             bottomNavItem(Icons.favorite_border, "Favorites"),
             bottomNavItem(Icons.person_outline, "Profile"),
           ],
