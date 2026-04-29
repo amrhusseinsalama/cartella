@@ -38,6 +38,7 @@ A Flutter e-commerce application with authentication, home, favorites, categorie
 
 ## 📁 Folder Structure
 
+```text
 lib/
 ├── main.dart
 ├── my_app.dart
@@ -58,26 +59,12 @@ lib/
     │   ├── data/
     │   ├── logic/
     │   └── ui/
-    │
     ├── home/
-    │   ├── data/
-    │   ├── logic/
-    │   └── ui/
-    │
     ├── cart/
-    │   ├── logic/
-    │   └── ui/
-    │
     ├── favorites/
-    │   ├── logic/
-    │   └── ui/
-    │
     ├── categories/
-    │   ├── data/
-    │   ├── logic/
-    │   └── ui/
-    │
     └── profile/
+```
 
 ## 🎯 Future Improvements
 
