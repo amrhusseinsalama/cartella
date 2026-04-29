@@ -4,7 +4,15 @@ A Flutter e-commerce application with authentication, home, favorites, categorie
 (still under developement)
 
 ## 🔥 Preview
-
+<p align="center">
+  <img src="screenshots/splash.png" width="220"/>
+  <img src="screenshots/onboarding.png" width="220"/>
+  <img src="screenshots/singup.png" width="220"/>
+  <img src="screenshots/login.png" width="220"/>
+  <img src="screenshots/home.png" width="220"/>
+  <img src="screenshots/cart.png" width="220"/>
+  <img src="screenshots/categories.png" width="220"/>
+</p>
 
 ## 🚀 Features
 
