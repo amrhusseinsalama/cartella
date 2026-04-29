@@ -5,13 +5,23 @@ A Flutter e-commerce application with authentication, home, favorites, categorie
 
 ## 🔥 Preview
 <p align="center">
-  <img src="screenshots/splash.png" width="220"/>
-  <img src="screenshots/onboarding.png" width="220"/>
-  <img src="screenshots/singup.png" width="220"/>
-  <img src="screenshots/login.png" width="220"/>
-  <img src="screenshots/home.png" width="220"/>
-  <img src="screenshots/cart.png" width="220"/>
-  <img src="screenshots/categories.png" width="220"/>
+  <img src="screenshots/splash.jpg" width="220"/>
+  <img src="screenshots/onboarding.jpg" width="220"/>
+  <img src="screenshots/singup.jpg" width="220"/>
+  <img src="screenshots/login.jpg" width="220"/>
+  <img src="screenshots/home.jpg" width="220"/>
+  <img src="screenshots/home1.jpg" width="220"/>
+  <img src="screenshots/home2.jpg" width="220"/>
+  <img src="screenshots/home3.jpg" width="220"/>
+  <img src="screenshots/cart.jpg" width="220"/>
+  <img src="screenshots/cart2.jpg" width="220"/>
+  <img src="screenshots/cart3.jpg" width="220"/>
+  <img src="screenshots/categories.jpg" width="220"/>
+  <img src="screenshots/favorites.jpg" width="220"/>
+  <img src="screenshots/favorites2.jpg" width="220"/>
+  <img src="screenshots/product.jpg" width="220"/>
+  <img src="screenshots/product2.jpg" width="220"/>
+  <img src="screenshots/profile.jpg" width="220"/>
 </p>
 
 ## 🚀 Features
