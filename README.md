@@ -3,7 +3,8 @@
 A Flutter e-commerce application with authentication, home, favorites, categories, profile, and cart system.
 (still under developement)
 
-## 🔥 Preview
+## 📱 Screenshots
+
 <p align="center">
   <img src="screenshots/splash.jpg" width="220"/>
   <img src="screenshots/onboarding.jpg" width="220"/>
@@ -100,8 +101,6 @@ cd cartella
 flutter pub get
 flutter run
 ```
-
-## 📱 Screenshots
 
 ## 🧍🏻‍♂️ Author
 
